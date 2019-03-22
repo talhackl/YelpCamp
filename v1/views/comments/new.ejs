@@ -1,0 +1,30 @@
+<% include ../partials/header %>
+
+
+<div class="container">
+    <div class="jumbotron">
+        <h1 style="text-align: center;"><%= Campground.name %>Campsite</h1>
+    </div>
+</div>
+
+<div class="container" style="width:50%;">
+    <h1 style="text-align: center">Enter New Comment</h1>
+    <form  action="/campgrounds/<%= Campground._id%>/comments" method="POST">
+        <div class="form-group">
+            <label for="text">Comment</label>
+            <textarea type="text" id="text" name="text" class="form-control"></textarea>
+        </div>
+
+        <div style="text-align: center" class="form-group">
+            <button  class="btn btn-sm btn-primary" >Submit</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+<% include ../partials/footer %>

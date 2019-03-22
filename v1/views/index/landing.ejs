@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>YelpCamp</title>
+      <link href="/bootstrap/full-slider.css" rel="stylesheet">
+      <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <header> 
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <div class="jumbotron" style="margin-bottom: 0;text-align: center">
+                <h1 >YelpCamp Landing Page</h1>
+                <a href="/campgrounds" class="btn btn-sm btn-primary">View Campgrouds</a>
+              </div>
+              <div class="carousel-inner" role="listbox">
+                  
+                  <div class="carousel-item active ">
+                      <img style="width: 100%; height:100%;" src="https://images.unsplash.com/photo-1476041800959-2f6bb412c8ce?ixlib=rb-0.3.5&s=3cea01429048ce122dff533448f43219&auto=format&fit=crop&w=750&q=80">
+                  </div>
+                <%campgrounds.forEach(function(campground){%>
+                <div class="carousel-item">
+                  <img style="width: 100%;height: 100%;" src="<%=campground.image%>">
+                </div>
+                <%})%>
+              </div>
+            </div>
+          </header>
+      
+      <script src="bootstrap/jquery.min.js"></script>
+      <script src="bootstrap/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Home</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+        <form id="form">
+            <input type="text" id="name" placeholder="name"><br>
+            <input type="text" id="email" placeholder="email"><br>
+            <input type="text" id="phone" placeholder="phone"><br>
+            <button id="button">Submit</button>
+        </form>
+
+        <script>
+            $(document).ready(function (){
+
+                $.ajax({
+                    url:"/users/api/5b13cfc8642a971e286f7c8f",
+                    method:"GET",
+                    success:function(dbdata){
+                            console.log(dbdata.name+"");
+                            console.log(dbdata.email+"");
+                            console.log(dbdata.phone+"");
+                        }   
+                    
+                });
+
+
+                //POST FUNCTION
+                $("#button").click(function(e){
+                    e.preventDefault();
+                    var datadb={
+                        name:$("#name").val(),
+                        email:$("#email").val(),
+                        phone:$("#phone").val()
+                    }
+                    JSON.stringify(datadb);
+                    $.ajax({
+                        url:"/users/api",
+                        method:"POST",
+                        data:datadb,
+                        success:function(){
+                            console.log("SUCCEDed");
+                        }
+                    });
+
+                });
+            });
+        </script>
+    </body>
+</html>
